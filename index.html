@@ -12,6 +12,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/UI/Logo/apple-touch-icon.png">
     <meta name="apple-mobile-web-app-title" content="G(x)">
     <link rel="manifest" href="/UI/Logo/site.webmanifest">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script src="js/player.js"></script>
 </head>
 <body>
     <header>
@@ -19,37 +21,51 @@
         <nav>
             <ul>
                 <li><a href="https://github.com/ElegantGx">个人Github首页</a></li>
-                <li><a href="/Note/note.html">个人笔记</a></li>
+                <li><a href="Note/note.html">个人笔记</a></li>
                 <li><a href="https://github.com/ElegantGx/Newton-Method-Solver/releases">牛顿法解方程软件下载地址</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="audio-section">
-            <h2>神作！（无损音质臻享版！）</h2>
-            <audio id="contentAudio" controls>
-                <source src="Audio/神作！.wav" type="audio/ogg">
-            </audio>
-            <h2>神作！</h2>
-            <audio id="contentAudio" controls>
-                <source src="Audio/神作！.mp3" type="audio/mpeg">
-            </audio>
-            <h2>呜呜呜（无损音质臻享版！）</h2>
-            <audio id="contentAudio" controls>
-                <source src="Audio/呜呜呜.wav" type="audio/ogg">
-            </audio>
-            <h2>呜呜呜</h2>
-            <audio id="contentAudio" controls>
-                <source src="Audio/呜呜呜.mp3" type="audio/mpeg">
-            </audio>
-            <h2>这期...拉了（无损音质臻享版！）</h2>
-            <audio id="contentAudio" controls>
-                <source src="Audio/这期拉了.wav" type="audio/ogg">
-            </audio>
-            <h2>这期...拉了</h2>
-            <audio id="contentAudio" controls>
-                <source src="Audio/这期拉了.mp3" type="audio/mpeg">
-            </audio>
+        <section class="music-player">
+            <div class="player-header">
+                <h2>神人音乐™ TYX℗</h2>
+                <p>享受神人音乐！！！！！</p>
+            </div>
+            <div class="player-container">
+                <div class="record-container">
+                    <div class="record" id="record">
+                        <div class="record-label">
+                            <img src="UI/Logo/favicon-96x96.png" alt="唱片封面" class="record-image">
+                        </div>
+                    </div>
+                </div>
+                <div class="playlist">
+                    <div class="playlist-header">
+                        <div class="header-title">
+                            <h3>播放列表
+                                <button class="fold-btn">▼</button>
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="song-list"></div>
+                </div>
+            </div>
+            <div class="player-controls">
+                <button class="control-btn prev-btn">◀</button>
+                <button class="control-btn play-btn">♪</button>
+                <button class="control-btn next-btn">▶</button>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress-bar">
+                        <div class="progress" id="progress"></div>
+                    </div>
+                    <div class="progress-time" id="progress-time">
+                        <span class="current-time">0:00</span>
+                        <span class="total-time">0:00</span>
+                    </div>
+                </div> 
+            </div>
+            <audio id="audio-player" controls style="display: none"></audio>
         </section>
         <article>
             <h1>咕咕嘎嘎</h1>
@@ -64,10 +80,11 @@
         </article>
     </main>
     <footer>
-        <p>© 2026 Gx's Web</p1>
+        <p>© 2026 Gx's Web</p>
     </footer>
 </body>
 </html>
+
 
 
 
